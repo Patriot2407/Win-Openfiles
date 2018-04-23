@@ -15,7 +15,7 @@ function Get-OpenFile {
     Write-Host $pathinfo
     openfiles /query /s $args[0] /fo csv /V | Out-File -Force $filepath
     try{
-    $rawtext = Import-CSV $filepath | Select "Accessed By", "Open Mode", "Open File (Path\executable)" | Where-Object {($_."Open File (Path\executable)" -match $search -or $_."Accessed By" -match $search) -and (($_."Open Mode" -match "Write") -or (($_."Open File (Path\executable)" -match ".pdf") -and ($_."Open Mode" -match "Read"))} | Format-Table -Wrap -AutoSize | Out-String
+    $rawtext = Import-CSV $filepath | Select "Accessed By", "Open Mode", "Open File (Path\executable)" | Where-Object {($_."Open File (Path\executable)" -match $search -or $_."Accessed By" -match $search) -and (($_."Open Mode" -match "Write") -or (($_."Open File (Path\executable)" -match ".pdf") -and ($_."Open Mode" -match "Read")))} | Format-Table -Wrap -AutoSize | Out-String
     }
     catch{write-host "ERROR DETECTED!" -ForegroundColor Yellow
     write-host "-->$($_.Exception.Message)<--" -ForegroundColor Red
