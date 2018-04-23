@@ -1,9 +1,5 @@
 $filepath = "C:\temp\openfiles.csv"
 $dirpath = "C:\temp"
-$allextensions = ".pdf .wmf .png .svg .des"
-$notdisplayable = ".wmf .png .svg .des"
-$fileinfo = "This program shows all Locked (by Write access) and all $allextensions files only. Please note that $notdisplayable files may not display in this list."
-$pathinfo = "Also note that the path is relative to the server. B:\Projects is M:\"
 if(!(Test-Path -Path $dirpath )){
     New-Item -ItemType directory -Path $dirpath
 }
@@ -36,7 +32,6 @@ for ($i=0;$i -lt $prettytext.Length; $i++) {
     Write-Host "Done searching."
    cmd /c pause | out-null
 }
-
 function Show-Menu {
 param ([string]$Title = 'Main Menu')
      cls
@@ -46,7 +41,7 @@ param ([string]$Title = 'Main Menu')
      Write-Host "3: Press '3' for all files" -ForegroundColor DarkYellow
      Write-Host "e: Press 'e' to quit this program (or just click the red 'X')" -ForegroundColor DarkRed
 }
-$servername = "fileserver"
+$servername = "INSERT SERVER NAME HERE"
 do
                 {
                 Show-Menu
