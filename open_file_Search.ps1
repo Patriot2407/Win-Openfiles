@@ -36,6 +36,7 @@ function Show-Menu {
 param ([string]$Title = 'Main Menu')
      cls
      Write-Host "================ $Title ================" -ForegroundColor green
+     Write-Host "~ Selected server is:$servername ~"
      Write-Host "1: Press '1' for search by file" -ForegroundColor Magenta
      Write-Host "2: Press '2' for search by user" -ForegroundColor Cyan
      Write-Host "3: Press '3' for all files" -ForegroundColor DarkYellow
