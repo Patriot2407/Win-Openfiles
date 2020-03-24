@@ -41,7 +41,7 @@ param ([string]$Title = 'Main Menu')
      Write-Host "3: Press '3' for all files" -ForegroundColor DarkYellow
      Write-Host "e: Press 'e' to quit this program (or just click the red 'X')" -ForegroundColor DarkRed
 }
-$servername = "INSERT SERVER NAME HERE"
+$servername = Read-Host "Server name?"
 do
                 {
                 Show-Menu
