@@ -1,4 +1,5 @@
-$filepath = "C:\temp\openfiles.csv"
+$rando=-join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_})
+$filepath = "C:\temp\openfiles-$rando.csv"
 $dirpath = "C:\temp"
 if(!(Test-Path -Path $dirpath )){
     New-Item -ItemType directory -Path $dirpath
