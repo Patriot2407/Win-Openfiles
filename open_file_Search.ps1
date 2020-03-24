@@ -41,6 +41,7 @@ param ([string]$Title = 'Main Menu')
      Write-Host "3: Press '3' for all files" -ForegroundColor DarkYellow
      Write-Host "e: Press 'e' to quit this program (or just click the red 'X')" -ForegroundColor DarkRed
 }
+clear-host
 $servername = Read-Host "Server name? (Please note, cannot search locally, as the global flag must be set with reboot)"
 do
                 {
